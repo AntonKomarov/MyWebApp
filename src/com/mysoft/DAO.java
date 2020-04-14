@@ -20,4 +20,8 @@ public class DAO {
     public static void deletePost(int index){
         posts.removeIf(p -> p.id == index);
     }
+
+    public static void addPost(String txt) {
+        posts.add(new Post(posts.size()+1, txt));
+    }
 }

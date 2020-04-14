@@ -24,6 +24,18 @@
         </td>
     </tr>
     </c:forEach>
+<form action ="/add" method=POST">
+        <tr>
+            <td colspan="2">
+                <input name = "txt" type = "text">
+            </td>
+            <td>
+                <input type = "submit">
+            </td>
+
+        </tr>
+</form>
+
 </table>
 
 </body>
