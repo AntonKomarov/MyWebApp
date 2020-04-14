@@ -9,6 +9,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="jstl:jstl:1.2" />
+          <element id="library" level="project" name="org.postgresql:postgresql:42.0.0" />
         </element>
       </element>
     </root>
