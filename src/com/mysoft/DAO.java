@@ -22,6 +22,6 @@ public class DAO {
     }
 
     public static void addPost(String txt) {
-        posts.add(new Post(posts.size()+1, txt));
+        posts.add(new Post(posts.size(), txt));
     }
 }

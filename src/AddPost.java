@@ -9,10 +9,10 @@ import java.io.IOException;
 
 @WebServlet(name = "AddPost", urlPatterns = "/add")
 public class AddPost extends HttpServlet {
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String txt = request.getParameter("txt");
+      String txt = request.getParameter("txt");
         DAO.addPost(txt);
+        response.sendRedirect("/posts");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
