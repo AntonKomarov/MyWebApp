@@ -12,25 +12,22 @@ public class DAO {
         System.out.println(getPosts());
     }
 
-
-
-
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
         return DriverManager.getConnection("jdbc:postgresql://localhost:5433/postgres", "postgres", "postgres");
     }
     public static List<Post> getPosts() throws ClassNotFoundException, SQLException{
         Connection connection = getConnection();
-        PreparedStatement ps = connection.prepareStatement("select * from posts");
-        ResultSet result = ps.executeQuery();
-        List<Post> postList = new ArrayList<>();
-        while (result.next()){
-            int id = result.getInt(1);
-            String txt = result.getString(2);
-            postList.add(new Post(id,txt));
-        }
-
-return postList;
+            System.out.println("we are connecting");
+            PreparedStatement ps = connection.prepareStatement("select * from posts");
+            ResultSet result = ps.executeQuery();
+            ArrayList<Post> posts = new ArrayList<>();
+            while (result.next()){
+                int id = result.getInt(1);
+                String txt = result.getString(2);
+                posts.add(new Post(id,txt));
+            }
+            return posts;
     }
 
     public static void deletePost(int index){

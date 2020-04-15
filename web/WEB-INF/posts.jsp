@@ -28,7 +28,7 @@
 <form action ="/add" method="POST">
         <tr>
             <td colspan="2">
-                <input name="txt" type="text">
+                <input name='txt' type="text">
             </td>
             <td>
                 <input type="submit">
