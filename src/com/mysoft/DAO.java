@@ -39,7 +39,12 @@ public class DAO {
         ps.executeUpdate();
     }
 
-    public static void addPost(String txt) {
+    public static void addPost(String txt) throws SQLException, ClassNotFoundException {
+        Connection connection = getConnection();
+        System.out.println("we are connection");
+        PreparedStatement ps = connection.prepareStatement("insert into posts(txt) value (?)");
+        ps.setString(1, txt);
+        ps.executeUpdate();
 
     }
 }
