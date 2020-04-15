@@ -17,7 +17,7 @@
     <c:forEach items="${requestScope.posts}" var="post">
     <tr>
         <td>${post.id}</td>
-        <td>${post.txt}</td>
+        <td><c:out value = "${post.txt}"/></td>
         <td>
             <a href="delete?id=${post.id}">
                <img src="delete.png"/>
@@ -28,7 +28,7 @@
 <form action ="/add" method="POST">
         <tr>
             <td colspan="2">
-                <input name="txt" type="text">
+                <input name='txt' type="text">
             </td>
             <td>
                 <input type="submit">

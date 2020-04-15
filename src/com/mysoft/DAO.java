@@ -1,5 +1,6 @@
 package com.mysoft;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -30,8 +31,12 @@ public class DAO {
             return posts;
     }
 
-    public static void deletePost(int index){
-
+    public static void deletePost(int index) throws ClassNotFoundException, SQLException {
+        Connection connection = getConnection();
+        System.out.println("we are connecting");
+        PreparedStatement ps = connection.prepareStatement("delete from posts where id=?");
+        ps.setInt(1,index);
+        ps.executeUpdate();
     }
 
     public static void addPost(String txt) {
